@@ -19,6 +19,9 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
         
         
+        let addCategoryButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(CategoriesViewController.goToAddCategoryScrean))
+            navigationItem.rightBarButtonItem = addCategoryButton
+        
         
     }
 
@@ -41,6 +44,25 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.textLabel?.text = "Test"
         
         return cell
+    }
+    
+    func goToAddCategoryScrean() {
+        
+        let addCategoryAlert = UIAlertController(title: "Add New Category", message: nil, preferredStyle: .alert)
+        
+        
+        addCategoryAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        addCategoryAlert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        
+        addCategoryAlert.addTextField()
+        addCategoryAlert.textFields?.first?.placeholder = "New Category Name"
+        
+        
+        present(addCategoryAlert, animated: true, completion: nil)
+        
     }
     
     
