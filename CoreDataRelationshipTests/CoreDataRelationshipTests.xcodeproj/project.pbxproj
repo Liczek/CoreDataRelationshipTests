@@ -15,6 +15,8 @@
 		C86B41EC1EB92D0C000A783C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86B41EA1EB92D0C000A783C /* LaunchScreen.storyboard */; };
 		C86B41F71EB92D0C000A783C /* CoreDataRelationshipTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B41F61EB92D0C000A783C /* CoreDataRelationshipTestsTests.swift */; };
 		C86B42021EB92D0C000A783C /* CoreDataRelationshipTestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B42011EB92D0C000A783C /* CoreDataRelationshipTestsUITests.swift */; };
+		C86B42131EB93A11000A783C /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B42111EB93A11000A783C /* Category+CoreDataClass.swift */; };
+		C86B42141EB93A11000A783C /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B42121EB93A11000A783C /* Category+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		C86B41FD1EB92D0C000A783C /* CoreDataRelationshipTestsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataRelationshipTestsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86B42011EB92D0C000A783C /* CoreDataRelationshipTestsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRelationshipTestsUITests.swift; sourceTree = "<group>"; };
 		C86B42031EB92D0C000A783C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C86B42111EB93A11000A783C /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C86B42121EB93A11000A783C /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		C86B41D21EB92D0B000A783C = {
 			isa = PBXGroup;
 			children = (
+				C86B42111EB93A11000A783C /* Category+CoreDataClass.swift */,
+				C86B42121EB93A11000A783C /* Category+CoreDataProperties.swift */,
 				C86B41DD1EB92D0C000A783C /* CoreDataRelationshipTests */,
 				C86B41F51EB92D0C000A783C /* CoreDataRelationshipTestsTests */,
 				C86B42001EB92D0C000A783C /* CoreDataRelationshipTestsUITests */,
@@ -266,6 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C86B41E11EB92D0C000A783C /* CategoriesViewController.swift in Sources */,
+				C86B42131EB93A11000A783C /* Category+CoreDataClass.swift in Sources */,
+				C86B42141EB93A11000A783C /* Category+CoreDataProperties.swift in Sources */,
 				C86B41E71EB92D0C000A783C /* CoreDataRelationshipTests.xcdatamodeld in Sources */,
 				C86B41DF1EB92D0C000A783C /* AppDelegate.swift in Sources */,
 			);
