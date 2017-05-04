@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C848C9641EBA554C00FBCCD7 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C848C9621EBA554C00FBCCD7 /* Item+CoreDataClass.swift */; };
-		C848C9651EBA554C00FBCCD7 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C848C9631EBA554C00FBCCD7 /* Item+CoreDataProperties.swift */; };
 		C84E84581EBB9293002E37D8 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84E84571EBB9293002E37D8 /* TasksViewController.swift */; };
+		C84E845D1EBBB432002E37D8 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84E84591EBBB432002E37D8 /* Category+CoreDataClass.swift */; };
+		C84E845E1EBBB432002E37D8 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84E845A1EBBB432002E37D8 /* Category+CoreDataProperties.swift */; };
+		C84E845F1EBBB432002E37D8 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84E845B1EBBB432002E37D8 /* Task+CoreDataClass.swift */; };
+		C84E84601EBBB432002E37D8 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84E845C1EBBB432002E37D8 /* Task+CoreDataProperties.swift */; };
 		C86B41DF1EB92D0C000A783C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B41DE1EB92D0C000A783C /* AppDelegate.swift */; };
 		C86B41E11EB92D0C000A783C /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B41E01EB92D0C000A783C /* CategoriesViewController.swift */; };
 		C86B41E41EB92D0C000A783C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86B41E21EB92D0C000A783C /* Main.storyboard */; };
@@ -18,8 +20,6 @@
 		C86B41EC1EB92D0C000A783C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86B41EA1EB92D0C000A783C /* LaunchScreen.storyboard */; };
 		C86B41F71EB92D0C000A783C /* CoreDataRelationshipTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B41F61EB92D0C000A783C /* CoreDataRelationshipTestsTests.swift */; };
 		C86B42021EB92D0C000A783C /* CoreDataRelationshipTestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B42011EB92D0C000A783C /* CoreDataRelationshipTestsUITests.swift */; };
-		C86B42131EB93A11000A783C /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B42111EB93A11000A783C /* Category+CoreDataClass.swift */; };
-		C86B42141EB93A11000A783C /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B42121EB93A11000A783C /* Category+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C848C9621EBA554C00FBCCD7 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C848C9631EBA554C00FBCCD7 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C84E84571EBB9293002E37D8 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		C84E84591EBBB432002E37D8 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C84E845A1EBBB432002E37D8 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C84E845B1EBBB432002E37D8 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C84E845C1EBBB432002E37D8 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C86B41DB1EB92D0C000A783C /* CoreDataRelationshipTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataRelationshipTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86B41DE1EB92D0C000A783C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C86B41E01EB92D0C000A783C /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -57,8 +59,6 @@
 		C86B41FD1EB92D0C000A783C /* CoreDataRelationshipTestsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataRelationshipTestsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86B42011EB92D0C000A783C /* CoreDataRelationshipTestsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRelationshipTestsUITests.swift; sourceTree = "<group>"; };
 		C86B42031EB92D0C000A783C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C86B42111EB93A11000A783C /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C86B42121EB93A11000A783C /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +89,10 @@
 		C86B41D21EB92D0B000A783C = {
 			isa = PBXGroup;
 			children = (
-				C848C9621EBA554C00FBCCD7 /* Item+CoreDataClass.swift */,
-				C848C9631EBA554C00FBCCD7 /* Item+CoreDataProperties.swift */,
-				C86B42111EB93A11000A783C /* Category+CoreDataClass.swift */,
-				C86B42121EB93A11000A783C /* Category+CoreDataProperties.swift */,
+				C84E84591EBBB432002E37D8 /* Category+CoreDataClass.swift */,
+				C84E845A1EBBB432002E37D8 /* Category+CoreDataProperties.swift */,
+				C84E845B1EBBB432002E37D8 /* Task+CoreDataClass.swift */,
+				C84E845C1EBBB432002E37D8 /* Task+CoreDataProperties.swift */,
 				C86B41DD1EB92D0C000A783C /* CoreDataRelationshipTests */,
 				C86B41F51EB92D0C000A783C /* CoreDataRelationshipTestsTests */,
 				C86B42001EB92D0C000A783C /* CoreDataRelationshipTestsUITests */,
@@ -280,13 +280,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C848C9651EBA554C00FBCCD7 /* Item+CoreDataProperties.swift in Sources */,
 				C84E84581EBB9293002E37D8 /* TasksViewController.swift in Sources */,
-				C848C9641EBA554C00FBCCD7 /* Item+CoreDataClass.swift in Sources */,
+				C84E845E1EBBB432002E37D8 /* Category+CoreDataProperties.swift in Sources */,
+				C84E845F1EBBB432002E37D8 /* Task+CoreDataClass.swift in Sources */,
 				C86B41E11EB92D0C000A783C /* CategoriesViewController.swift in Sources */,
-				C86B42131EB93A11000A783C /* Category+CoreDataClass.swift in Sources */,
-				C86B42141EB93A11000A783C /* Category+CoreDataProperties.swift in Sources */,
 				C86B41E71EB92D0C000A783C /* CoreDataRelationshipTests.xcdatamodeld in Sources */,
+				C84E845D1EBBB432002E37D8 /* Category+CoreDataClass.swift in Sources */,
+				C84E84601EBBB432002E37D8 /* Task+CoreDataProperties.swift in Sources */,
 				C86B41DF1EB92D0C000A783C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

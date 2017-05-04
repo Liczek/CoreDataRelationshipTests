@@ -2,7 +2,7 @@
 //  Category+CoreDataProperties.swift
 //  CoreDataRelationshipTests
 //
-//  Created by Paweł Liczmański on 03.05.2017.
+//  Created by Paweł Liczmański on 04.05.2017.
 //  Copyright © 2017 Paweł Liczmański. All rights reserved.
 //
 
@@ -17,23 +17,23 @@ extension Category {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var items: NSSet?
+    @NSManaged public var tasks: NSSet?
 
 }
 
-// MARK: Generated accessors for items
+// MARK: Generated accessors for tasks
 extension Category {
 
-    @objc(addItemsObject:)
-    @NSManaged public func addToItems(_ value: Item)
+    @objc(addTasksObject:)
+    @NSManaged public func addToTasks(_ value: Task)
 
-    @objc(removeItemsObject:)
-    @NSManaged public func removeFromItems(_ value: Item)
+    @objc(removeTasksObject:)
+    @NSManaged public func removeFromTasks(_ value: Task)
 
-    @objc(addItems:)
-    @NSManaged public func addToItems(_ values: NSSet)
+    @objc(addTasks:)
+    @NSManaged public func addToTasks(_ values: NSSet)
 
-    @objc(removeItems:)
-    @NSManaged public func removeFromItems(_ values: NSSet)
+    @objc(removeTasks:)
+    @NSManaged public func removeFromTasks(_ values: NSSet)
 
 }
