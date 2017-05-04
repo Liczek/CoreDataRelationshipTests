@@ -61,7 +61,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         let addCategoryAlert = UIAlertController(title: "Add New Category", message: nil, preferredStyle: .alert)
         
         
-        addCategoryAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         addCategoryAlert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
             
             guard let categoryNameToSave = addCategoryAlert.textFields?[0].text else {
@@ -74,6 +74,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             self.reloadData()
         }))
         
+        addCategoryAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         
         addCategoryAlert.addTextField()
         addCategoryAlert.textFields?.first?.placeholder = "New Category Name"
@@ -124,6 +125,12 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             print("Fetch Result Controller Failed \(error)")
         }
     }
+//    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        var indexOfSelectedCategory = indexPath
+//        
+//        
+//    }
     
     
 

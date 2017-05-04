@@ -32,6 +32,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="goM-Ne-xg1" kind="presentation" identifier="ShowTasks" id="caj-Fv-qfM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -57,6 +60,54 @@
             </objects>
             <point key="canvasLocation" x="1021.875" y="33.802816901408448"/>
         </scene>
+        <!--Tasks-->
+        <scene sceneID="Ynb-zb-Iey">
+            <objects>
+                <viewController id="VIp-ez-yq1" customClass="TasksViewController" customModule="CoreDataRelationshipTests" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="drW-6e-qpt"/>
+                        <viewControllerLayoutGuide type="bottom" id="L0G-bU-cnv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YqV-VX-bqO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iMn-ae-Qzr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tasksCell" id="Vz8-61-S9o">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vz8-61-S9o" id="HRe-aH-8LO">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VIp-ez-yq1" id="Ck9-Xm-1Xe"/>
+                                    <outlet property="delegate" destination="VIp-ez-yq1" id="5q3-FS-wXv"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L0G-bU-cnv" firstAttribute="top" secondItem="iMn-ae-Qzr" secondAttribute="bottom" id="0tG-WR-Aak"/>
+                            <constraint firstItem="iMn-ae-Qzr" firstAttribute="top" secondItem="YqV-VX-bqO" secondAttribute="top" id="aaT-QA-WuL"/>
+                            <constraint firstAttribute="trailing" secondItem="iMn-ae-Qzr" secondAttribute="trailing" id="qGy-MB-Os6"/>
+                            <constraint firstItem="iMn-ae-Qzr" firstAttribute="leading" secondItem="YqV-VX-bqO" secondAttribute="leading" id="xb9-kp-o8D"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tasks" id="tBs-fF-0HQ"/>
+                    <connections>
+                        <outlet property="tasksTableViewController" destination="iMn-ae-Qzr" id="1Ak-YN-Cya"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0qL-Bn-2vm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2593" y="34"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="y1e-Ns-c2p">
             <objects>
@@ -74,6 +125,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qqb-Y7-NRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="240" y="34"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iJk-OM-wSk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="goM-Ne-xg1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sTW-UE-vXM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VIp-ez-yq1" kind="relationship" relationship="rootViewController" id="McF-K1-eaa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HgD-X5-j13" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="34"/>
         </scene>
     </scenes>
 </document>
