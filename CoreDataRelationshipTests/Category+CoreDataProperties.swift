@@ -17,7 +17,7 @@ extension Category {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var tasks: NSSet?
+    @NSManaged public var tasks: [Task]?
 
 }
 

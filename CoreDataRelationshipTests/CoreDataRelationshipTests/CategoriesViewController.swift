@@ -70,6 +70,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             
             
             self.saveCategoryName(categoryName: categoryNameToSave)
+        
             
             self.reloadData()
         }))
@@ -93,7 +94,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let category = Category(entity: Category.entity(), insertInto: managedContext)
-        
+        //category.setValue(categoryName, forKey: "name")
         category.name = categoryName
         
         do {

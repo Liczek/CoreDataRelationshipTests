@@ -12,6 +12,8 @@ import CoreData
 
 class TasksViewController: UIViewController {
     
+    
+    
     var fetchResultController: NSFetchedResultsController<Task>!
     
     @IBOutlet weak var tasksTableViewController: UITableView!
@@ -76,14 +78,18 @@ class TasksViewController: UIViewController {
         
         let managedContext =  appDelegate.persistentContainer.viewContext
         
+        let category = Category(entity: Category.entity(), insertInto: managedContext)
+        
+        let tasks = category.mutableSetValue(forKey: "tasks")
+        
         let task = Task(entity: Task.entity(), insertInto: managedContext)
         
-//        let category = Category(entity: Category.entity(), insertInto: managedContext)
-//        
-//        category.addToItems(task)
+        task.setValue(category, forKey: "category")
         
         task.name = taskName
         
+        tasks.add(task)
+
         do {
             try managedContext.save()
         } catch let error as NSError {
