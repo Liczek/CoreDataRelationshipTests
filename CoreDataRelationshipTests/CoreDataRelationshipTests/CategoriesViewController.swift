@@ -12,6 +12,8 @@ import CoreData
 class CategoriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var fetchResultController: NSFetchedResultsController<Category>!
+    var categoryIndex = Int64(Date().timeIntervalSince1970)
+    var tappedCategoryName = Int64()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -52,6 +54,8 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
         cell.textLabel?.text = category.name
+        categoryIndex = Int64(Date().timeIntervalSince1970)
+        cell.detailTextLabel?.text = String(category.uniqueIndex)
         
         return cell
     }
@@ -95,6 +99,8 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         let category = Category(entity: Category.entity(), insertInto: managedContext)
         
         category.name = categoryName
+        category.uniqueIndex = categoryIndex
+        print(String(categoryIndex))
         
         do {
             try managedContext.save()
@@ -132,6 +138,20 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
 //        
 //    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tappedCategory = fetchResultController.object(at: indexPath)
+        tappedCategoryName = tappedCategory.uniqueIndex
+        print("send category name: \(String(tappedCategoryName))")
+        performSegue(withIdentifier: "ShowTasks", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowTasks" {
+            let navigationController = segue.destination as! UINavigationController
+            let controller = navigationController.topViewController as! TasksViewController
+            controller.categoryUniqueIndex = tappedCategoryName
+        }
+    }
     
 
 

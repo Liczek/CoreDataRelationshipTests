@@ -12,13 +12,14 @@ import CoreData
 
 class TasksViewController: UIViewController {
     
-    var fetchResultController: NSFetchedResultsController<Task>!
+    var fetchResultController: NSFetchedResultsController<Task>?
+    var categoryUniqueIndex  = Int64()
     
     @IBOutlet weak var tasksTableViewController: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("przeniesiono przez segue: \(categoryUniqueIndex)")
         tasksTableViewController.delegate = self
         
         
@@ -83,7 +84,8 @@ class TasksViewController: UIViewController {
 //        category.addToItems(task)
         
         task.name = taskName
-        
+        task.categoryName = categoryUniqueIndex
+        //task.categoryName = "domek"
         do {
             try managedContext.save()
         } catch let error as NSError {
@@ -98,14 +100,17 @@ class TasksViewController: UIViewController {
         }
         
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
-        let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        let nameSortDescriptor = NSSortDescriptor(key: "name",
+                                                  ascending: true,
+                                                  selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))
         fetchRequest.sortDescriptors = [nameSortDescriptor]
-        fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: appDelegate.persistentContainer.viewContext, sectionNameKeyPath: #keyPath(Task.name), cacheName: nil)
+        fetchRequest.predicate = NSPredicate(format: "any categoryName contains[c] %@ ", categoryUniqueIndex)
+        fetchResultController = NSFetchedResultsController<Task>(fetchRequest: fetchRequest, managedObjectContext: appDelegate.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         
         do {
-            try fetchResultController.performFetch()
+            try fetchResultController?.performFetch()
         } catch let error as NSError {
-            print("Reload Data Failed (fetching) \(error)")
+            print("Reload Data Failed (fetching) \(error.userInfo)")
         }
         
         
@@ -115,7 +120,7 @@ class TasksViewController: UIViewController {
     
     
     
-    
+  //  request.predicate = NSPredicate(format: "any tweets.text contains[c] %@", mention!)
     
     
 }
@@ -129,21 +134,27 @@ extension TasksViewController: UITableViewDelegate {
 extension TasksViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return fetchResultController.sections?.count ?? 0
+        
+        return fetchResultController?.sections?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchResultController.sections?[section].numberOfObjects ?? 0
+        print(fetchResultController?.sections?[section].numberOfObjects ?? 0)
+        return fetchResultController!.sections?[section].numberOfObjects ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let item = fetchResultController.object(at: indexPath)
+        let item = fetchResultController?.object(at: indexPath)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "tasksCell", for: indexPath)
         
-        cell.textLabel?.text = item.name
-        
+        if item?.name != nil {
+            
+        cell.textLabel?.text = item?.name
+        } else {
+            cell.textLabel?.text = "No Tasks"
+        }
         return cell
     }
     

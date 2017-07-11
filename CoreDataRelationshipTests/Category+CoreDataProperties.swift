@@ -2,7 +2,7 @@
 //  Category+CoreDataProperties.swift
 //  CoreDataRelationshipTests
 //
-//  Created by Paweł Liczmański on 04.05.2017.
+//  Created by Paweł Liczmański on 11.07.2017.
 //  Copyright © 2017 Paweł Liczmański. All rights reserved.
 //
 
@@ -17,6 +17,7 @@ extension Category {
     }
 
     @NSManaged public var name: String?
+    @NSManaged public var uniqueIndex: Int64
     @NSManaged public var tasks: NSSet?
 
 }
