@@ -104,7 +104,7 @@ class TasksViewController: UIViewController {
                                                   ascending: true,
                                                   selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))
         fetchRequest.sortDescriptors = [nameSortDescriptor]
-        fetchRequest.predicate = NSPredicate(format: "any categoryName contains[c] %@ ", categoryUniqueIndex)
+        fetchRequest.predicate = NSPredicate(format: "any categoryName contains[c] %@ ", String(categoryUniqueIndex))
         fetchResultController = NSFetchedResultsController<Task>(fetchRequest: fetchRequest, managedObjectContext: appDelegate.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         
         do {
@@ -149,12 +149,9 @@ extension TasksViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "tasksCell", for: indexPath)
         
-        if item?.name != nil {
-            
         cell.textLabel?.text = item?.name
-        } else {
-            cell.textLabel?.text = "No Tasks"
-        }
+        cell.detailTextLabel?.text = String(describing: item?.categoryName)
+        
         return cell
     }
     
